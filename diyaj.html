@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Diya 👑</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ffcce6, #ccf2ff);
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        
+        .dancing-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background: #ff6b9d;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            box-shadow: inset -7px -7px 10px rgba(0,0,0,0.1);
+        }
+        
+        .balloon:before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background: #333;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -40px;
+        }
+        
+        .balloon:after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 8px;
+            background: #ff9cbd;
+            border-radius: 50%;
+            bottom: -48px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(5deg); }
+        }
+        
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f00;
+            opacity: 0;
+        }
+        
+        .message-block {
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .crown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .crown:before {
+            content: "👑";
+            position: absolute;
+            font-size: 3rem;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #ff6b9d, #ffcc00);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 15px 15px 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+            margin: 20px;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+    </style>
+</head>
+<body class="relative overflow-hidden">
+    <!-- Balloons -->
+    <div id="balloons"></div>
+    
+    <!-- Confetti -->
+    <div id="confetti-container"></div>
+    
+    <div class="container mx-auto px-4 py-8 md:py-12 max-w-4xl relative z-10">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 dancing-font highlight">Happy Birthday</h1>
+            <div class="crown inline-block">
+                <h2 class="text-4xl md:text-5xl font-bold">Diya</h2>
+            </div>
+            <p class="text-xl mt-2 italic">The chaos, the comfort, the main character of my college life</p>
+        </div>
+        
+        <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl shadow-xl p-6 md:p-8 mb-12 max-h-[70vh] overflow-y-auto">
+            <div class="message-block show">
+                <p class="text-2xl mb-6">To Diya — the chaos, the comfort, the main character of my college life</p>
+                <p class="text-xl mb-8 italic highlight">Happy Birthday, you bold, flirty, absolutely unapologetic icon</p>
+            </div>
+            
+            <div class="message-block my-8">
+                <p class="text-lg mb-4">I could've written a sweet, short message.</p>
+                <p class="text-lg mb-4">But have you met us??</p>
+                <p class="text-lg">This friendship deserves a full-on dramatic script with background music, auto sound effects, and maybe one slow-motion scene where a slipper flies across the classroom.</p>
+            </div>
+            
+            <div class="message-block my-8">
+                <p class="text-lg">Let's rewind to how it all started.</p>
+                <p class="text-lg italic mt-2">Two total opposites — you, the cool-headed, IDGAF baddie. Me, the walking clumsy tornado.</p>
+            </div>
+
+            <div class="message-block my-8">
+                <p class="text-lg">Thrown together through speeches and events, we somehow became orientation celebrities, vibing on stage while secretly trying not to trip.</p>
+                <p class="text-lg">And from that moment on — it was us against boring college life.</p>
+                <p class="text-lg">Auto rides? Girl. Me? Spilling things like I was doing stunts for a detergent ad. You? Casually cleaning up behind me, protecting my honor (and the seat covers) before the auto uncle caught on.</p>
+                <p class="text-lg">You became my personal auto disaster manager — no cape, just pure grace and trauma response speed.</p>
+                <p class="text-lg">Avinash sir’s class? You were a whole vibe. Everyone else: stressed. You: headphones in, zoning out like you were backstage at Coachella. Honestly, you made skipping reality look like a talent.</p>
+                <p class="text-lg">That first mass bunk will go down in history. Everyone was scared, but YOU — you took it to full Mission Impossible mode. Hiding behind the door like a soap opera villain, sneaking out with the reflexes of a ninja. The way we all stood outside after, buzzing with victory? Electric. I’ll never forget that.</p>
+                <p class="text-lg">But babe… The Slipper Scene™ deserves its own paragraph. That one annoying classmate — pushing everyone's buttons. You? Calmly removing your slipper like you were about to bless him with tradition and pain. SWOOSH. 👡 Impact. Silence. Chaos. Respect. I still believe that slipper had GPS tracking because it landed too perfectly. You didn’t just throw a slipper. You threw justice, order, and fear into that room. And I was so proud. 😭</p>
+                <p class="text-lg">And then came that iconic day at KLE Poster Competition. You were ready to make your poster and bounce — your friends were blowing up your phone like you were running a black-market birthday party. But your fate was sealed… because I turned into your possessive girlfriend™. I was like, “You’re not leaving. You’re staying. I have a feeling.” And guess what? We stayed. We WON. That smile on your face? Worth it. That moment? Ours forever.</p>
+                <p class="text-lg">You’ve been my ride-or-die. Through every bunk, every breakdown, every side-eye in the lab while you used your phone right in front of the vice principal without blinking. You’re fearless. You’re chaotic. You’re caring in a way that never asks for credit. You’ve picked me up emotionally when I didn’t even ask. You’ve made my college life something I’ll never shut up about.</p>
+                <p class="text-lg">You’re my best friend, my emotional support flirt, my therapist, my chaos twin. And no matter how many trophies you win or slippers you throw — you’ll always be my safe place.</p>
+                <p class="text-lg">So on your birthday, here’s what I wish:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li>✨ May you always dance to your own playlist.</li>
+                    <li>✨ May no vice principal ever catch you.</li>
+                    <li>✨ May you always have someone to clean up your mess (or throw the slipper for you).</li>
+                    <li>✨ And may your life be as legendary as the stories we’ve made.</li>
+                </ul>
+                <p class="text-lg font-bold">Happy Birthday, Diya. You are, without a doubt, the drama. And I wouldn’t have it any other way.</p>
+                <p class="text-lg mt-4">– Darshini 💘 Forever your favorite auto co-passenger, bunk partner, poster queen, and chaos twin.</p>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="polaroid">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b1fa58c-4fc3-42d8-b6cf-e32b98a85bef.png" alt="Two college friends laughing with books in hand on campus grounds during golden hour" class="w-full h-auto" />
+                <p class="text-center mt-2">Our beginning - polar opposite vibes</p>
+            </div>
+            <div class="polaroid">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/600263a0-37e8-4e3a-883c-e90721d7dff6.png" alt="Friends eating ice cream with silly faces at the college canteen" class="w-full h-auto" />
+                <p class="text-center mt-2">Midnight ice cream runs</p>
+            </div>
+        </div>
+        
+        <div class="flex flex-col items-center gap-4 mt-12">
+            <button id="party-btn" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-xl dancing-font transition-all transform hover:scale-105">
+                Start Birthday Party!
+            </button>
+            <div class="flex items-center gap-2 text-pink-700">
+                <span>🔈</span>
+                <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.7" class="w-32">
+            </div>
+        </div>
+    </div>
+    
+    <audio id="birthday-audio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/KoolAndTheGang-Celebration.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div id="slipper-animation" class="fixed top-0 left-0 w-full h-full pointer-events-none hidden">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d2833792-c516-440f-bcd5-07bf57930eac.png" alt="Flying slipper animation" class="absolute w-24 h-auto animate-[fly_3s_linear_forwards]" style="animation-name: slipperFly;">
+    </div>
+    
+    <script>
+        // Create balloons
+        function createBalloons() {
+            const container = document.getElementById('balloons');
+            const colors = ['#ff6b9d', '#ffcc00', '#6b9dff', '#9dff6b', '#cc00ff'];
+            const count = 20;
+            
+            for (let i = 0; i < count; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                balloon.style.left = Math.random() * 100 + '%';
+                balloon.style.top = window.innerHeight + 'px';
+                balloon.style.opacity = 0.7 + Math.random() * 0.3;
+                balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+                balloon.style.animationDuration = 5 + Math.random() * 10 + 's';
+                balloon.style.animationDelay = Math.random() * 5 + 's';
+                balloon.style.width = 30 + Math.random() * 30 + 'px';
+                balloon.style.height = 40 + Math.random() * 40 + 'px';
+                
+                container.appendChild(balloon);
+            }
+        }
+        
+        // Create confetti
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#ff0000', '#ffcc00', '#00ff66', '#0066ff', '#cc00ff'];
+            const count = 150;
+            
+            for (let i = 0; i < count; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = -10 + 'px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                confetti.style.width = 5 + Math.random() * 10 + 'px';
+                confetti.style.height = 5 + Math.random() * 10 + 'px';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                
+                confetti.style.animation = 'confetti ' + (3 + Math.random() * 3) + 's linear forwards';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                
+                container.appendChild(confetti);
+            }
+        }
+        
+        // Show message blocks with delay
+        function showMessages() {
+            const messages = document.querySelectorAll('.message-block');
+            messages.forEach((msg, index) => {
+                setTimeout(() => {
+                    msg.classList.add('show');
+                }, 1000 * index + 1000);
+            });
+        }
+        
+        // Flying slipper animation
+        function flySlipper() {
+            const slipper = document.getElementById('slipper-animation');
+            slipper.style.display = 'block';
+            
+            setTimeout(() => {
+                slipper.style.display = 'none';
+            }, 3000);
+        }
+        
+        // Start party function
+        function startParty() {
+            const audio = document.getElementById('birthday-audio');
+            audio.play();
+            
+            createConfetti();
+            
+            setTimeout(() => {
+                flySlipper();
+            }, 1500);
+            
+            document.getElementById('party-btn').textContent = 'Party Mode: ON!';
+            document.getElementById('party-btn').classList.add('animate-pulse');
+            
+            document.body.style.animation = 'partyBackground 1s infinite alternate';
+            
+            // Change balloon colors randomly
+            const balloons = document.querySelectorAll('.balloon');
+            const colors = ['#ff0000', '#ffcc00', '#00ff66', '#0066ff', '#cc00ff'];
+            
+            setInterval(() => {
+                balloons.forEach(balloon => {
+                    if (Math.random() > 0.7) {
+                        balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    }
+                });
+            }, 1000);
+        }
+        
+        // Volume control
+        document.getElementById('volume-control').addEventListener('input', function(e) {
+            document.getElementById('birthday-audio').volume = e.target.value;
+        });
+
+        // Initialize
+        window.addEventListener('load', () => {
+            // Set initial volume
+            document.getElementById('birthday-audio').volume = 0.7;
+            createBalloons();
+            showMessages();
+            
+            document.getElementById('party-btn').addEventListener('click', startParty);
+        });
+        
+        // Add keyframe animation for slipper
+        const styleSheet = document.createElement("style");
+        styleSheet.innerHTML = `
+            @keyframes slipperFly {
+                0% { transform: translateX(-100px) translateY(100px) rotate(-45deg); }
+                50% { transform: translateX(50vw) translateY(50vh) rotate(45deg); }
+                100% { transform: translateX(100vw) translateY(0) rotate(90deg); }
+            }
+            
+            @keyframes partyBackground {
+                from { background: linear-gradient(45deg, #ffcce6, #ccf2ff); }
+                to { background: linear-gradient(45deg, #ffccff, #ccffff); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>
